@@ -3,13 +3,31 @@
   "version": "1.0.0",
   "description": "Winston transport for Residue",
   "main": "index.js",
+  "files": [
+    "index.js"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Muflihun Labs <info@muflihun.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/muflihun/residue-winston/issues"
+  },
+  "homepage": "https://github.com/muflihun/residue-winston#readme",
   "dependencies": {
     "residue": "^1.2.3",
     "winston-transport": "^3.0.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muflihun/residue-winston.git"
+  },
+  "keywords": [
+    "residue",
+    "logging",
+    "remote-logging",
+    "residue-client",
+    "winston-transport"
+  ]
 }
