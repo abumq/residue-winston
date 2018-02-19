@@ -3,12 +3,6 @@
 //
 // Copyright 2017-present Muflihun Labs
 //
-// This module provides interface for connecting and interacting with
-// residue server seamlessly. Once you are connected this module
-// takes care of lost connections, expired tokens, expired clients
-// and keep itself updated with latest tokens and touch server when 
-// needed to stay alive.
-//
 // Author: @abumusamq
 //
 // https://muflihun.com
