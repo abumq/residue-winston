@@ -35,7 +35,7 @@ Residue.prototype.log = function (info, callback) {
     this.logger.error(info.message);
     break;
   case 'warn':
-    this.logger.warning(info.message);
+    this.logger.warn(info.message);
     break;
   default:
     this.logger.info(info.message);
