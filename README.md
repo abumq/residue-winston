@@ -6,13 +6,14 @@ For options, please refer to [Residue for Node.js](https://github.com/muflihun/r
 
 Simply enable the transport on winston
 
-```
+```javascript
 const Residue = require('residue-winston');
 const logger = winston.createLogger({
   level: 'silly',
   transports: [
     new Residue({
-        url: 'localhost:8777',
+        url: '127.0.0.1:8777',
+       // ... more configs
         logger_id: 'sample-app'
     })
   ]
