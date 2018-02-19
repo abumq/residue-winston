@@ -2,6 +2,10 @@
 
 # Winston Transport for Residue
 
+[![Version](https://img.shields.io/npm/v/residue-winston.svg)](https://www.npmjs.com/package/residue-winston)
+[![GitHub license](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/muflihun/residue-winston/blob/master/LICENSE)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/MuflihunDotCom/25)
+
 For options, please refer to [Residue for Node.js](https://github.com/muflihun/residue-node#connectoptions)
 
 Simply enable the transport on winston
