@@ -1,0 +1,16 @@
+{
+  "name": "winston-residue",
+  "version": "1.0.0",
+  "description": "Winston transport for Residue",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "residue": "^1.2.3",
+    "winston": "^3.0.0-rc1",
+    "winston-transport": "^3.0.1"
+  }
+}
