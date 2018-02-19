@@ -1,14 +1,18 @@
 const util = require('util');
 const residue = require('residue');
 const TransportStream = require('winston-transport');
-const { LEVEL, MESSAGE } = require('triple-beam');
 
 var Residue = module.exports = function(options) {
-    options = options || {}; // todo: default options
+    if (!options) {
+        throw new Exception("Please provide residue-node options");
+    }
+    if (!options.logger_id) {
+        throw new Exception("Please provide logger_id in options");
+    }
+
     TransportStream.call(this, options);
-    residue.loadConfiguration(options);
-    residue.connect();
-    this.logger = residue.getLogger('sample-app');
+    residue.connect(options);
+    this.logger = residue.getLogger(options.logger_id);
 };
 
 util.inherits(Residue, TransportStream);
@@ -21,8 +25,23 @@ Residue.prototype.log = function (info, callback) {
     self.emit('logged', info);
   });
  
-console.log(info);
-  this.logger.info(info[MESSAGE]);
+  console.log(info);
+
+  switch (info.level) {
+  case 'info':
+    this.logger.info(info.message);
+    break;
+  case 'error':
+    this.logger.error(info.message);
+    break;
+  case 'warn':
+    this.logger.warning(info.message);
+    break;
+  default:
+    this.logger.info(info.message);
+    break;
+    
+  }
 
   if (callback) { callback(); } // eslint-disable-line
 };
