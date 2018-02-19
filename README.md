@@ -1,3 +1,5 @@
+﷽
+
 # Winston Transport for Residue
 
 For options, please refer to [Residue for Node.js](https://github.com/muflihun/residue-node#connectoptions)
