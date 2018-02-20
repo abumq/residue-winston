@@ -18,10 +18,10 @@ const TransportStream = require('winston-transport');
 
 var Residue = module.exports = function(options) {
     if (!options) {
-        throw new Exception("Please provide residue-node options");
+        throw "Please provide residue-node options";
     }
     if (!options.logger_id) {
-        throw new Exception("Please provide logger_id in options");
+        throw "Please provide logger_id in options";
     }
 
     TransportStream.call(this, options);
@@ -30,42 +30,49 @@ var Residue = module.exports = function(options) {
     this.logger = residue.getLogger(options.logger_id);
 };
 
+// Inherit from `winston.Transport`
 util.inherits(Residue, TransportStream);
 
+// Transport name
 Residue.prototype.name = 'residue';
 
-Residue.prototype.log = function (info, callback) {
-  var self = this;
-  setImmediate(function () {
-    self.emit('logged', info);
-  });
- 
-  console.log(info);
+// Backwards compatibility
+winston.transports.Residue = Residue;
 
-  switch (info.level) {
-  case 'info':
-    this.logger.info(info.message);
-    break;
-  case 'error':
-    this.logger.error(info.message);
-    break;
-  case 'warn':
-    this.logger.warn(info.message);
-    break;
-  case 'debug':
-    this.logger.debug(info.message);
-    break;
-  case 'silly':
-    this.logger.info(info.message);
-    break;
-  case 'verbose':
-    this.logger.verbose(1, info.message);
-    break;
-  default:
-    this.logger.info(info.message);
-    break;
+// Winston Transport Function
+Residue.prototype.log = function(arg1, arg2) {
     
-  }
+    const level = typeof arg1 === 'string' ? arg1 : arg1.level;
+    const msg = typeof arg2 === 'string' ? arg2 : arg1.message;
+    const callback = typeof arg2 === 'function' ? arg2 : null;
 
-  if (callback) { callback(); } // eslint-disable-line
+    switch (level) {
+        case 'info':
+            this.logger.info(msg);
+            break;
+        case 'error':
+            this.logger.error(msg);
+            break;
+        case 'warn':
+            this.logger.warn(msg);
+            break;
+        case 'debug':
+            this.logger.debug(msg);
+            break;
+        case 'silly':
+            this.logger.info(msg);
+            break;
+        case 'verbose':
+            this.logger.verbose(1, msg);
+            break;
+        default:
+            this.logger.info(msg);
+            break;
+    }
+    
+    this.emit('logged');
+
+    if (callback) {
+        callback();
+    }
 };
