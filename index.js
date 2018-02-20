@@ -14,6 +14,7 @@
 
 const util = require('util');
 const residue = require('residue');
+const winston = require('winston')
 const TransportStream = require('winston-transport');
 
 var Residue = module.exports = function(options) {
