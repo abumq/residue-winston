@@ -33,8 +33,9 @@ const Residue = function(options) {
     }
     residue_internal.connect();
     this.logger = residue_internal.getLogger(options.logger_id);
-    // add one level as we pick up from further source
-    this.logger._source_base_index = this.logger._source_base_index + (options.source_layer_count || 6);
+    this.logger.log_sources = options.log_sources || {
+        base_idx: this.logger.log_sources + (options.log_source_layer_count || 6),
+    };
 };
 
 // Inherit from `winston.Transport`
