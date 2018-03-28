@@ -1,10 +1,13 @@
 'use strict';
 const winston = require('winston');
 const Residue = require('residue-winston');
+const residue_internal = Residue.residue_internal;
+
+console.log(`Residue library version ${residue_internal.version()}-${residue_internal.type()}`); 
 
 let createLogger = (options) => new winston.Logger(options);
 //
-// for 3.0.0+
+// for winston 3.0.0+
 // createLogger = winston.createLogger;
 
 const logger = createLogger({
