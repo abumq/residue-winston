@@ -16,9 +16,10 @@ const logger = winston.createLogger({
   level: 'silly',
   transports: [
     new Residue({
-        url: '127.0.0.1:8777',
-       // ... more configs
-        logger_id: 'sample-app'
+        logger_id: 'sample-app',
+        // following is optional, if config_file not provided
+        // all these options are used as config
+        config_file: 'path to config file'
     })
   ]
 });

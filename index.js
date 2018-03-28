@@ -17,7 +17,7 @@ const residue = require('residue');
 const winston = require('winston')
 const TransportStream = require('winston-transport');
 
-var Residue = module.exports = function(options) {
+const Residue = module.exports = function(options) {
     if (!options) {
         throw "Please provide residue-node options";
     }
@@ -26,7 +26,12 @@ var Residue = module.exports = function(options) {
     }
 
     TransportStream.call(this, options);
-    residue.connect(options);
+    if (options.config_file) {
+        residue.loadConfiguration(options.config_file);
+    } else {
+        residue.loadConfiguration(options);
+    }
+    residue.connect();
     this._residue = residue; // for export purposes
     this.logger = residue.getLogger(options.logger_id);
 };
@@ -77,3 +82,4 @@ Residue.prototype.log = function(arg1, arg2) {
         callback();
     }
 };
+
