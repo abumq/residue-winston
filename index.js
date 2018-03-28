@@ -34,7 +34,7 @@ const Residue = function(options) {
     residue_internal.connect();
     this.logger = residue_internal.getLogger(options.logger_id);
     this.logger.log_sources = options.log_sources || {
-        base_idx: this.logger.log_sources + (options.log_source_layer_count || 6),
+        base_idx: this.logger.log_sources.base_idx + (options.log_source_layer_count || 6),
         getSourceFile: this.logger.log_sources.getSourceFile,
         getSourceLine: this.logger.log_sources.getSourceLine,
         getSourceFunc: this.logger.log_sources.getSourceFunc,
