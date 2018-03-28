@@ -28,3 +28,7 @@ logger.silly('this is test');
 logger.warn('this is test');
 logger.verbose('this is test');
 
+// residue_logger is more advanced
+const residue_logger = residue_internal.getLogger('sample-app');
+residue_logger.info('this is test %s', {name: 'Adam'});
+
