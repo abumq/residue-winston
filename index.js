@@ -13,11 +13,11 @@
 "use strict";
 
 const util = require('util');
-const residue = require('residue');
+const residue_internal = require('residue');
 const winston = require('winston')
 const TransportStream = require('winston-transport');
 
-const Residue = module.exports = function(options) {
+const Residue = function(options) {
     if (!options) {
         throw "Please provide residue-node options";
     }
@@ -27,13 +27,12 @@ const Residue = module.exports = function(options) {
 
     TransportStream.call(this, options);
     if (options.config_file) {
-        residue.loadConfiguration(options.config_file);
+        residue_internal.loadConfiguration(options.config_file);
     } else {
-        residue.loadConfiguration(options);
+      residue_internal.loadConfiguration(options);
     }
-    residue.connect();
-    this._residue = residue; // for export purposes
-    this.logger = residue.getLogger(options.logger_id);
+    residue_internal.connect();
+    this.logger = residue_internal.getLogger(options.logger_id);
 };
 
 // Inherit from `winston.Transport`
@@ -47,7 +46,7 @@ winston.transports.Residue = Residue;
 
 // Winston Transport Function
 Residue.prototype.log = function(arg1, arg2) {
-    
+
     const level = typeof arg1 === 'string' ? arg1 : arg1.level;
     const msg = typeof arg2 === 'string' ? arg2 : arg1.message;
     const callback = typeof arg2 === 'function' ? arg2 : null;
@@ -75,7 +74,7 @@ Residue.prototype.log = function(arg1, arg2) {
             this.logger.info(msg);
             break;
     }
-    
+
     this.emit('logged');
 
     if (callback) {
@@ -83,3 +82,5 @@ Residue.prototype.log = function(arg1, arg2) {
     }
 };
 
+module.exports.residue = Residue;
+module.exports.residue_internal = residue_internal;
