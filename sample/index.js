@@ -12,7 +12,7 @@ const logger = createLogger({
   transports: [
       new winston.transports.File({ filename: 'combined.log' }),
       new Residue({
-          config_file: '/Users/majid.khan/Projects/residue-node/samples/client.conf.json',
+          config_file: 'client.conf.json',
           logger_id: 'sample-app',
       })
   ]
