@@ -11,10 +11,11 @@ For options, please refer to [Residue for Node.js](https://github.com/muflihun/r
 Simply enable the transport on winston
 
 ```javascript
-const residue = require('residue-winston');
-// or import residue from 'residue-winston';
-// you can import internal residue-node library as
-// import { residue_internal } from 'residue-winston';
+const Residue = require('residue-winston');
+const residue_internal = Residue.residue_internal;
+
+// or import Residue, { residue_internal } from 'residue-winston';
+
 const logger = winston.createLogger({
   level: 'silly',
   transports: [
