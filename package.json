@@ -1,6 +1,6 @@
 {
   "name": "residue-winston",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "Winston transport for Residue",
   "main": "index.js",
   "files": [
@@ -16,7 +16,7 @@
   },
   "homepage": "https://github.com/muflihun/residue-winston#readme",
   "dependencies": {
-    "residue": "^2.3.10",
+    "residue": "^2.3.11",
     "winston": "^2.4.0",
     "winston-transport": "^3.0.1"
   },
