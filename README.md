@@ -31,6 +31,16 @@ const logger = winston.createLogger({
 console.log(`Residue library version ${residue_internal.version()}-${residue_internal.type()}`); 
 ```
 
+## Use Residue Logger
+You can also use mix of winston logger and residue logger when using `residue-winston` module.
+
+```
+const rlogger = residue_internal.getLogger('mylogger');
+rlogger.info('this is object value: %s', {name: 'Adam', age: 960});
+```
+
+Learn more [here](https://github.com/muflihun/residue-node#usage)
+
 ## License
 ```
 Copyright 2017-present Muflihun Labs
