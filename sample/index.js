@@ -1,34 +1,33 @@
 'use strict';
 const winston = require('winston');
-const Residue = require('residue-winston');
-const residue_internal = Residue.residue_internal;
+const ResidueClient = require('residue-winston');
+const residueInstance = ResidueClient.instance;
 
-console.log(`Residue library version ${residue_internal.version()}-${residue_internal.type()}`); 
+console.log(`Residue library version ${residueInstance.version()}-${residueInstance.type()}`);
 
 let createLogger = (options) => new winston.Logger(options);
 //
 // for winston 3.0.0+
 // createLogger = winston.createLogger;
 
-const logger = createLogger({
+const wlogger = createLogger({
   level: 'info',
   transports: [
       new winston.transports.File({ filename: 'combined.log' }),
-      new Residue({
+      new ResidueClient({
           config_file: 'client.conf.json',
           logger_id: 'sample-app',
       })
   ]
 });
 
-logger.info('this is test');
-logger.error('this is test');
-logger.debug('this is test');
-logger.silly('this is test');
-logger.warn('this is test');
-logger.verbose('this is test');
+wlogger.info('this is test');
+wlogger.error('this is test');
+wlogger.debug('this is test');
+wlogger.silly('this is test');
+wlogger.warn('this is test');
+wlogger.verbose('this is test');
 
-// residue_logger is more advanced
-const residue_logger = residue_internal.getLogger('sample-app');
-residue_logger.info('this is test %s', {name: 'Adam'});
-
+// residueInstance is more advanced
+const logger = residueInstance.getLogger('sample-app');
+logger.info('this is test %s', {name: 'Adam'});
