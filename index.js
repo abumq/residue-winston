@@ -1,13 +1,13 @@
 //
 // Winston transport for residue
 //
-// Copyright 2017-present Muflihun Labs
+// Copyright 2017-present Zuhd Web Services
 //
 // Author: @abumusamq
 //
 // https://muflihun.com
-// https://muflihun.github.io/residue
-// https://github.com/muflihun/residue-winston
+// https://zuhd.org
+// https://github.com/zuhd-org/residue-winston
 //
 
 "use strict";

@@ -3,10 +3,11 @@
 # Winston Transport for Residue
 
 [![Version](https://img.shields.io/npm/v/residue-winston.svg)](https://www.npmjs.com/package/residue-winston)
-[![GitHub license](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/muflihun/residue-winston/blob/master/LICENSE)
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/MuflihunDotCom/25)
+[![GitHub license](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/zuhd-org/residue-winston/blob/master/LICENSE)
 
-For options, please refer to [Residue for Node.js](https://github.com/muflihun/residue-node#connectoptions)
+[![Donate](https://muflihun.github.io/donate.png?v2)](https://www.paypal.me/zuhd/25)
+
+For options, please refer to [Residue for Node.js](https://github.com/zuhd-org/residue-node#connectoptions)
 
 Simply enable the transport on winston
 
@@ -28,7 +29,7 @@ const logger = winston.createLogger({
   ]
 });
 
-console.log(`Residue library version ${residue_internal.version()}-${residue_internal.type()}`); 
+console.log(`Residue library version ${residue_internal.version()}-${residue_internal.type()}`);
 ```
 
 ## Use Residue Logger
@@ -39,15 +40,15 @@ const rlogger = residue_internal.getLogger('mylogger');
 rlogger.info('this is object value: %s', {name: 'Adam', age: 960});
 ```
 
-Learn more [here](https://github.com/muflihun/residue-node#usage)
+Learn more [here](https://github.com/zuhd-org/residue-node#usage)
 
 ## License
 ```
-Copyright 2017-present Muflihun Labs
+Copyright 2017-present Zuhd Web Services
 Copyright 2017-present @abumusamq
 
-https://github.com/muflihun/
-https://muflihun.github.io/
+https://github.com/zuhd-org/
+https://zuhd.org
 https://muflihun.com/
 
 Licensed under the Apache License, Version 2.0 (the "License");
