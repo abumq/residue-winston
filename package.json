@@ -16,7 +16,7 @@
   },
   "homepage": "https://github.com/zuhd-org/residue-winston#readme",
   "dependencies": {
-    "residue": "^2.3.17",
+    "residue": "^3.0.5",
     "winston": "^2.4.0",
     "winston-transport": "^3.0.1"
   },

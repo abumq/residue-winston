@@ -13,9 +13,11 @@
 "use strict";
 
 const util = require('util');
-const residue_internal = require('residue');
+const ResidueClient = require('residue');
 const winston = require('winston')
 const TransportStream = require('winston-transport');
+
+const residueInstance = new ResidueClient();
 
 const Residue = module.exports = function(options) {
     if (!options) {
@@ -27,14 +29,16 @@ const Residue = module.exports = function(options) {
 
     TransportStream.call(this, options);
 
+
+
     if (options.config_file) {
-        residue_internal.loadConfiguration(options.config_file);
+        residue_instance.loadConfiguration(options.config_file);
     } else {
-      residue_internal.loadConfiguration(options);
+      residue_instance.loadConfiguration(options);
     }
 
-    residue_internal.connect();
-    this.logger = residue_internal.getLogger(options.logger_id);
+    residueInstance.connect();
+    this.logger = residueInstance.getLogger(options.logger_id);
     this.logger.log_sources = {
         base_idx: this.logger.log_sources.base_idx + (options.log_source_layer_count || 6),
         getSourceFile: this.logger.log_sources.getSourceFile,
@@ -90,4 +94,4 @@ Residue.prototype.log = function(arg1, arg2, meta, cb) {
     }
 };
 
-module.exports.residue_internal = residue_internal;
+module.exports.instance = residueInstance;
