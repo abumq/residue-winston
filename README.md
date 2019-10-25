@@ -3,11 +3,11 @@
 # Winston Transport for Residue
 
 [![Version](https://img.shields.io/npm/v/residue-winston.svg)](https://www.npmjs.com/package/residue-winston)
-[![GitHub license](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/zuhd-org/residue-winston/blob/master/LICENSE)
+[![GitHub license](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/amrayn/residue-winston/blob/master/LICENSE)
 
-[![Donate](https://muflihun.github.io/donate.png?v2)](https://www.paypal.me/zuhd/25)
+[![Donate](https://amrayn.github.io/donate.png?v2)](https://amrayn.com/donate)
 
-For options, please refer to [Residue for Node.js](https://github.com/zuhd-org/residue-node#connectoptions)
+For options, please refer to [Residue for Node.js](https://github.com/amrayn/residue-node#connectoptions)
 
 Simply enable the transport on winston
 
@@ -40,15 +40,15 @@ const rlogger = residue_internal.getLogger('mylogger');
 rlogger.info('this is object value: %s', {name: 'Adam', age: 960});
 ```
 
-Learn more [here](https://github.com/zuhd-org/residue-node#usage)
+Learn more [here](https://github.com/amrayn/residue-node#usage)
 
 ## License
 ```
-Copyright 2017-present Zuhd Web Services
+Copyright 2017-present Amrayn Web Services
 Copyright 2017-present @abumusamq
 
-https://github.com/zuhd-org/
-https://zuhd.org
+https://github.com/amrayn/
+https://amrayn.com
 https://muflihun.com/
 
 Licensed under the Apache License, Version 2.0 (the "License");

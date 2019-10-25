@@ -9,12 +9,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Zuhd Web Services <opensource@zuhd.org>",
+  "author": "Amrayn Web Services <opensource@amrayn.com>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/zuhd-org/residue-winston/issues"
+    "url": "https://github.com/amrayn/residue-winston/issues"
   },
-  "homepage": "https://github.com/zuhd-org/residue-winston#readme",
+  "homepage": "https://github.com/amrayn/residue-winston#readme",
   "dependencies": {
     "residue": "^3.0.5",
     "winston": "^2.4.0",
@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zuhd-org/residue-winston.git"
+    "url": "git+https://github.com/amrayn/residue-winston.git"
   },
   "keywords": [
     "residue",
